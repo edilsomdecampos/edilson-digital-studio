@@ -1221,3 +1221,54 @@ button {
         transform: none;
     }
 }
+
+
+/* ==========================================================
+   PROJETOS SELECIONADOS — portfólio editorial
+   Seção isolada: não altera o hero nem o Canvas original.
+   ========================================================== */
+.portfolio { background: #101514; color: #f4f5ee; }
+.portfolio .section-index { color: #a1aba2; border-color: rgba(241,246,230,.19); }
+.portfolio-heading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin: 75px 0 60px; }
+.portfolio-heading .big-heading { margin: 0; }
+.portfolio-kicker { color: #d1f577; font-size: 11px; letter-spacing: .18em; font-weight: 700; margin-bottom: 24px; }
+.portfolio-heading > p { max-width: 370px; color: #b9c0b7; font-size: 15px; line-height: 1.8; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 76px 28px; }
+.portfolio-card { min-width: 0; }
+.portfolio-art { height: clamp(270px, 31vw, 480px); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; isolation: isolate; transition: border-radius .5s ease; }
+.portfolio-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.38)); pointer-events: none; }
+.portfolio-card:hover .portfolio-art { border-radius: 18px; }
+.portfolio-art-label { position: relative; z-index: 2; font-size: clamp(43px, 6vw, 90px); letter-spacing: -.07em; font-weight: 800; transition: transform .7s cubic-bezier(.2,.75,.2,1); }
+.portfolio-card:hover .portfolio-art-label { transform: scale(1.065) translateY(-5px); }
+.portfolio-art-label span { color: #d0f477; }
+.portfolio-art-detail { position: absolute; z-index: 3; left: 24px; bottom: 21px; font-size: 10px; letter-spacing: .14em; font-weight: 700; }
+.portfolio-card--naldo .portfolio-art { background: repeating-linear-gradient(135deg, transparent 0 35%, rgba(0,0,0,.17) 35.15% 35.45%, transparent 35.65% 70%), linear-gradient(115deg, #a69b8c, #d4cec4 48%, #786c5b); color: #262a23; }
+.portfolio-card--naldo .portfolio-art-label span { color: #4b553e; }
+.portfolio-card--flora .portfolio-art { background: radial-gradient(ellipse at 51% 55%, #f2c3ba, transparent 42%), linear-gradient(145deg, #e8e6d9, #aab5a0); color: #516747; }
+.portfolio-flower { font-size: clamp(170px, 23vw, 350px); line-height: 1; color: #566d57; font-weight: 300; text-shadow: 15px 15px 0 #c58f86, -18px -8px 0 #e9c4b3; transition: transform .8s ease; }
+.portfolio-card:hover .portfolio-flower { transform: rotate(35deg) scale(1.08); }
+.portfolio-card--restaurante .portfolio-art { background: radial-gradient(ellipse at 65% 30%, rgba(194,128,65,.49), transparent 40%), linear-gradient(135deg, #17110d, #452b20 58%, #100f0c); color: #e7d3b6; }
+.portfolio-card--restaurante .portfolio-art-label { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.05em; }
+.portfolio-card--restaurante .portfolio-art-label span { color: #c99367; }
+.portfolio-card--velocity .portfolio-art { background: repeating-linear-gradient(100deg, transparent 0 15%, rgba(234,92,47,.16) 15.1% 15.4%, transparent 15.6% 30%), radial-gradient(ellipse at 50% 95%, #9d2816, transparent 50%), #14141a; color: #fff0e6; }
+.portfolio-card--velocity .portfolio-art-label { font-style: italic; }
+.portfolio-card--velocity .portfolio-art-label span { color: #fd6d40; }
+.portfolio-meta { display: flex; justify-content: space-between; gap: 16px; margin-top: 20px; color: #a3ada1; font-size: 10px; letter-spacing: .12em; }
+.portfolio-card h3 { font-size: clamp(22px, 2.2vw, 31px); line-height: 1.25; letter-spacing: -.035em; margin: 18px 0 8px; }
+.portfolio-card p { color: #bac2b8; line-height: 1.7; max-width: 470px; font-size: 14px; margin: 0 0 20px; }
+.portfolio-link, .portfolio-pending { display: inline-flex; align-items: center; gap: 15px; font-size: 12px; letter-spacing: .06em; font-weight: 700; }
+.portfolio-link { border-bottom: 1px solid #d0f477; padding-bottom: 9px; transition: color .25s ease, gap .25s ease; }
+.portfolio-link:hover, .portfolio-link:focus-visible { color: #d0f477; gap: 23px; }
+.portfolio-pending { color: #909b90; }
+.portfolio-note { margin-top: 56px; color: #8e998f; font-size: 12px; line-height: 1.7; }
+@media (max-width: 760px) {
+  .portfolio-heading { flex-direction: column; align-items: start; gap: 18px; margin: 52px 0 40px; }
+  .portfolio-heading > p { max-width: 100%; }
+  .portfolio-grid { grid-template-columns: 1fr; gap: 54px; }
+  .portfolio-art { height: min(80vw, 430px); }
+  .portfolio-meta { flex-wrap: wrap; }
+  .portfolio-note { margin-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-art, .portfolio-art-label, .portfolio-flower, .portfolio-link { transition: none; }
+}
